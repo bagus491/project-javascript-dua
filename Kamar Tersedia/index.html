@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelSub/SoaxHotel</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+   
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .box {
+            width: 400px;
+            height: 500px;
+            background: orange;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            color: white;
+            
+        }
+
+        #box-sub {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub2 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub3 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub4 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub5 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub6 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub7 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub8 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+
+        #box-sub9 {
+            width: 120px;
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 100px;
+            background: black;
+        }
+       
+
+
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Hotel SoaxDo</h1>
+
+        <!-- box hotel -->
+        <div class="box">
+            <div id="box-sub">
+                <h1>1</h1>
+            </div>
+            <div id="box-sub2">
+                <h1>2</h1>
+            </div>
+            <div id="box-sub3">
+                <h1>3</h1>
+            </div>
+            <div id="box-sub4">
+                <h1>4</h1>
+            </div>
+            <div id="box-sub5">
+                <h1>5</h1>
+            </div>
+            <div id="box-sub6">
+                <h1>6</h1>
+            </div>
+            <div id="box-sub7">
+                <h1>7</h1>
+            </div>
+            <div id="box-sub8">
+                <h1>8</h1>
+            </div>
+            <div id="box-sub9">
+                <h1>9</h1>
+            </div>
+        </div>
+        <!-- done box hotel -->
+
+       
+    </div>
+
+    <script>
+        let boxsub = document.getElementById('box-sub')
+        let boxsubsa = document.getElementById('box-sub2')
+        let boxsubdu = document.getElementById('box-sub3')
+        let boxsubti = document.getElementById('box-sub4')
+        let boxsubpat = document.getElementById('box-sub5')
+        let boxsublim = document.getElementById('box-sub6')
+        let boxsubena = document.getElementById('box-sub7')
+        let boxsubtuj = document.getElementById('box-sub8')
+        let boxsubdel = document.getElementById('box-sub9')
+
+
+
+
+        var NamaPengunjung = []
+        var tambahpengunjung = function(nama,NamaPengunjung){
+            if(NamaPengunjung.length == 0){
+                NamaPengunjung.push(nama)
+                return NamaPengunjung
+            }else {
+                for(let i = 0 ; i < NamaPengunjung.length; i++){
+                    if(NamaPengunjung[i] == undefined){
+                        NamaPengunjung[i] = nama
+                        return NamaPengunjung
+                    }else if(NamaPengunjung[i] == nama){
+                        console.log("Nama pengunjung ada")
+                    }                   
+                    else if(i == NamaPengunjung.length - 1){
+                        NamaPengunjung.push(nama)
+                        return NamaPengunjung
+                    }else if(NamaPengunjung[i] == 0){
+                        boxsub.style.background = "White"
+                    }
+                }
+            }
+        }
+
+      
+
+
+        var hapuspengunjung = function(nama,NamaPengunjung){
+            if(NamaPengunjung.length == 0){
+                console.log('kamar semua tersedia')
+            }else {
+                for(let i = 0 ; i < NamaPengunjung.length; i++){
+                    if(NamaPengunjung[i] == nama){
+                            NamaPengunjung[i] = undefined
+                            return NamaPengunjung
+                    }else if( i == NamaPengunjung.length - 1){
+                        console.log(NamaPengunjung + 'tidak ada didalam kamar')
+                    }
+                }
+            }
+            return NamaPengunjung
+        }
+       
+    </script>
+</body>
+</html>

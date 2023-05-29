@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perulangan/TebakAngka</title>
+</head>
+<body>
+    <script>
+        const x = confirm("ingin bermain tebak angka?")
+        let kesempatan = 3
+        let max = 10
+        if(x){
+            let y =  prompt("Tebak angka 1-10")
+            let p = Math.round(Math.random() * max)
+            
+            if(y === p){
+                alert("anda berhasil")
+            }else{
+                alert("anda gagal")
+                kesempatan -= 1 
+            }
+
+            alert(` hasilnya adalah ${p}`)
+            alert(`kesempatan sisa ${kesempatan}`)
+        }else{
+            alert("terima kasih")
+        }
+
+        
+            // kesempatan 2
+            if(kesempatan === 2){
+                let l = confirm("anda ingin bermain lagi?")
+                if(l === true){
+                    y = prompt("Tebak Angka 1-10")
+                    if(y){
+                        let p = Math.round(Math.random() * max)
+
+                        if(y === p){
+                       alert("anda berhasil")
+                          }else{
+                           alert("anda gagal")
+                            kesempatan -= 1 
+                            
+                            }
+
+                            alert(` hasilnya adalah ${p}`)
+                            alert(`kesempatan sisa ${kesempatan}`)
+                    }else {
+                        alert("terima kasih")
+                    }
+                }else {
+                    alert("terima kasih")
+                }
+            }else{
+                alert("terima kasih")
+            }
+
+         
+
+            // kesempatan 3 
+            
+            if(kesempatan === 1){
+                let l = confirm("anda ingin bermain lagi?")
+                if(l === true){
+                    y = prompt("Tebak Angka 1-10")
+                    if(y){
+                       let p = Math.round(Math.random() * max)
+
+                        if(y === p){
+                       alert("anda berhasil")
+                          }else{
+                           alert("anda gagal")
+                            kesempatan -= 1 
+                            }
+
+                            alert(` hasilnya adalah ${p}`)
+                            alert(`kesempatan sisa ${kesempatan}`)
+                    }else {
+                        alert("terima kasih")
+                    }
+                }else {
+                    alert("terima kasih")
+                }
+            }else{
+                alert("terima kasih")
+            }
+
+           
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome To SoaxDo</h1>
+    <h3>What you want to know ?</h3>
+
+    <form action="" method="post">
+        <input type="search" placeholder="Search disini" id="inputnama" list="search-option">
+        <button type="button" onclick="proses()" id="buttonsatu">Proses</button>
+
+        <datalist id="search-option">
+            <option value="Messi"></option>
+            <option value="Indonesia"></option>
+            <option value="Pisang"></option>
+        </datalist>
+    </form>
+
+    <h3 id="tittle"></h3>
+    <p  id="caption"></p>
+    
+    <script>
+        let inputnama = document.getElementById('inputnama')
+        let buttonsatu = document.getElementById('buttonsatu')
+        let tittle = document.getElementById('title')
+        let caption = document.getElementById('caption')
+
+        function proses(){
+            switch(inputnama.value){
+                case "Messi" :
+                document.getElementById('tittle').innerHTML = "Messi"
+                caption.innerHTML = "adalah pemain bola profesional yang sering disebut dengan GOAT"
+                break
+                case "Indonesia" :
+                document.getElementById('tittle').innerHTML = "Indonesia"
+                    caption.innerHTML = "adalah sebuah negara yang berada di Asean salah satu negara dengan jumlah penduduk terbanyak"
+                break
+                case "pisang" : 
+                document.getElementById('tittle').innerHTML = "Pisang"
+                caption.innerHTML = "adalah salah satu buah-buahan yang baik untuk diet"
+                break
+                default :
+                caption.innerHTML = "yang anda cari belum kami dapati terima kasih"     
+            }
+        }
+    </script>
+</body>
+</html>

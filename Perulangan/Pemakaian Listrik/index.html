@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perulangan/PemakaianListrik</title>
+</head>
+<body>
+    <h1>Menghitung Penggunaan Listrik Warga Sekitar</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Nama Pelanggan:</td>
+                <Td><input type="text" placeholder="Nama Warga" id="namaPelanggan"></Td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Kategori:</td>
+                <td><select id="Kategori">
+                    <option value="..">..</option>
+                    <option value="sosial">Sosial</option>
+                    <option value="rumah">Rumah</option>
+                    <option value="industri">Industri</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Jumlah Pemakaian Listrik</td>
+                <td><input type="text" placeholder="Pemakaian Listrik" id="ListrikPakai"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="button" onclick="proses()" id="buttonproses">Proses</button>
+                     <button type="button" onclick="reset()" id="buttonreset">Reset</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <h5>Tarif PerKWH</h5>
+   <p id="cetakP"></p>
+    <H5>Sub Total</H5>
+   <p id="cetakC"></p>
+   <h5>Total + Pajak</h5>
+   <p id="cetakpajak"></p>
+
+    <script>
+        let namaPelanggan = document.getElementById('namaPelanggan')
+        let Kategori = document.getElementById('Kategori')
+        let ListrikPakai = document.getElementById('ListrikPakai')
+        let buttonproses = document.getElementById('buttonproses')
+        let buttonreset = document.getElementById('buttonreset')
+        let  cetakP = document.getElementById('cetakP')
+        let cetakC = document.getElementById('cetakC')
+        let cetakpajak = document.getElementById('cetakpajak')
+
+
+        let sosialAbo = 10000
+        let sosialTarif = 0
+
+
+        let rumahAbo = 30000
+        let rumahTarif = 0
+        let  rumahpajak = 0.1
+
+        let  indusAbo = 50000
+        let  indusTarif = 0
+        let induspajak = 0.3
+
+        const Nilai = []
+        const valueP = []
+        const proses = () =>{
+            if(namaPelanggan.value === ""  && ListrikPakai.value === ""){
+                alert("Anda belum mengisi apapun")
+            }
+
+            if(Kategori.value === "sosial"){
+                    for(let i = 1; i < ListrikPakai.value ; i++){
+                        let p = sosialTarif += 300
+                         let c  =  sosialAbo + p
+                         Nilai.push(c)
+                         valueP.push(p)
+                           }         
+                        Nilai.forEach(() => {
+                          cetakC.innerHTML = JSON.stringify("Rp" + Nilai)
+                        }) 
+                        valueP.forEach(() =>{
+                            cetakP.innerHTML = JSON.stringify("Rp" + valueP)
+                        })
+                        alert("berhasil")
+                 }  else if(Kategori.value === "rumah"){
+                    for(let i = 1; i <= ListrikPakai.value ; i++){
+                        let  p = rumahTarif += 500
+                         let c  =  rumahAbo + p
+                         Nilai.push(c)
+                         valueP.push(p)
+                         
+                           }    
+                           // pembelajaran baru ditambah tau dari goggle     
+                        Nilai.forEach(() => {
+                          cetakC.innerHTML = JSON.stringify("Rp" + Nilai)
+                        }) 
+                        valueP.forEach(() =>{
+                            cetakP.innerHTML = JSON.stringify("Rp" + valueP)
+                        })
+
+                        //foreach itu pengulangan penggati for of
+                        // stringtify itu mengganti data array menjadi string ==> materi Javascript standar Array
+                      
+                      let x = 500 * ListrikPakai.value   + rumahAbo
+                      let y  = x * rumahpajak
+                      let k = y + x
+                      cetakpajak.innerHTML = k
+                        alert("berhasil")
+                 }
+                 else if(Kategori.value === "industri"){
+                    for(let i = 1; i <= ListrikPakai.value ; i++){
+                        let  p = indusTarif += 1000
+                         let c  =  indusAbo + p
+                         Nilai.push(c)
+                         valueP.push(p)
+                         
+                           }    
+                           // pembelajaran baru ditambah tau dari goggle     
+                        Nilai.forEach(() => {
+                          cetakC.innerHTML = JSON.stringify("Rp" + Nilai)
+                        }) 
+                        valueP.forEach(() =>{
+                            cetakP.innerHTML = JSON.stringify("Rp" + valueP)
+                        })
+
+                        //foreach itu pengulangan penggati for of
+                        // stringtify itu mengganti data array menjadi string ==> materi Javascript standar Array
+                      
+                      let x = 1000 * ListrikPakai.value  + indusAbo
+                      let y  = x * induspajak
+                      let k = x + y 
+                      cetakpajak.innerHTML = k
+                      alert("berhasil")
+                 }
+        }
+
+        const reset = () =>{
+            location.reload()
+        }
+    </script>
+</body>
+</html>
